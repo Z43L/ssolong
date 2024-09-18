@@ -2,20 +2,20 @@
 
 
 
-int checkmap_limits_y(solong solong) 
+int checkmap_limits_y(solong solong, t_map map) 
 {
     int len;
     int i;
 
-    len = ft_strlen(solong.map[0]);
-    while (solong.map)
+    len = ft_strlen(map.map[0]);
+    while (map.map)
     {
-        if(solong.map[0][i] != WALL)
+        if(map.map[0][i] != WALL)
         {
             printf("error las y de las paredes no son iguales");
             return 1;
         }
-        if(solong.map[len][i] != WALL)
+        if(map.map[len][i] != WALL)
         {
             printf("error las y de las paredes no son iguales");
             return 1;
@@ -26,20 +26,20 @@ int checkmap_limits_y(solong solong)
 
 }
 
-int checkmap_limits_x(solong solong) 
+int checkmap_limits_x(solong solong, t_map map) 
 {
     int len;
     int i;
 
-    len = ft_strlen(solong.map);
-    while (solong.map)
+    len = ft_strlen(map.map);
+    while (map.map)
     {
-        if(solong.map[i][0] != WALL)
+        if(map.map[i][0] != WALL)
         {
             printf("error las x de las paredes no son iguales");
             return 1;
         }
-        if(solong.map[i][len] != WALL)
+        if(map.map[i][len] != WALL)
         {
             printf("error las x de las paredes no son iguales");
             return 1;
@@ -50,19 +50,19 @@ int checkmap_limits_x(solong solong)
 
 }
 
-int count_map_element(solong solong)
+int count_map_element(solong solong, t_map map)
 {
     int i;
     
     i = 0;
-    while(solong.map[i])
+    while(map.map[i])
     {
         int x;
 
         x = 0;
-        while(solong.map[i][x])
+        while(map.map[i][x])
         {
-            if(!ft_strchr("10CPEF",solong.map[i][x]))
+            if(!ft_strchr("10CPEF",map.map[i][x]))
             {
                 printf("error no estan todos los caracteres en el mapa ");
                 return 1;

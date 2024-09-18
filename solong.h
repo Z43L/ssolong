@@ -17,7 +17,6 @@
 
 typedef struct solong
 {
-    int **map;
     int y;
     int x;
     char *filename;
@@ -25,14 +24,40 @@ typedef struct solong
     int exit_number;
     int coin_number;
     int **map_elementen;
-    t_element t_element;
+    t_map map;
     
 }   solong;
 
-typedef struct s_element
+typedef struct s_map
 {
-	int		position_y;
-	int		position_x;
-}		t_element;
+  int **map;
+  int x;
+  int y;
+  t_enemy enemy;
+  t_player player;
+  t_items items;
+}  t_map;
+
+typedef struct s_player
+{
+  void *sprite;
+  int x;
+  int y;
+}  t_player;
+
+typedef struct s_enemy
+{
+  void *sprite;
+  int x;
+  int y;
+}  t_enemy;
+
+typedef struct s_items
+{
+  void *sprite;
+  int x;
+  int y;
+}  t_items;
+
 
 #endif
